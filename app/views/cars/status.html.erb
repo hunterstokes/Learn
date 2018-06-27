@@ -1,0 +1,14 @@
+
+
+
+<p>Welcome to status</p>
+
+
+The car make is<%=@make%>
+<br />
+The car model is <%=@model%>
+<br />
+The car speed is <%=@speed%>
+
+<%=button_to 'Accelerate That Bitch', cars_accelerate_path, method: :get %>
+<%=button_to 'Stop That Bitch', cars_brake_path, method: :get %>
