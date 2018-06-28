@@ -1,9 +1,10 @@
 class Car
-  attr_accessor :speed,:make,:model
-  def initialize(make=" ",model=" ", speed=0)
+  attr_accessor :speed,:make,:model,:light
+  def initialize(make=" ",model=" ", speed=0, light="Off")
     @speed = speed
     @make = make
     @model = model
+    @light = light
   end
 
   def accelerate()
@@ -16,6 +17,14 @@ class Car
     else
       @speed=0
     end
-
   end
+
+  def light()
+    if @light == "Off"
+        @light = "On"
+    else
+        @light = "Off"
+    end
+  end
+
 end

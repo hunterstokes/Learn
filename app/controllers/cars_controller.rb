@@ -12,6 +12,7 @@ class CarsController < ApplicationController
     @make=@car.make
     @model=@car.model
     @speed=@car.speed
+    @light=@car.light
 
 
   end
@@ -33,4 +34,11 @@ class CarsController < ApplicationController
     cookies[:speed]=@car.speed
   end
 
+  def light
+    @car = YAML.load(session[:car])
+    @car.light
+    session[:car] = @car.to_yaml
+    redirect_to '/cars/status'
+    cookies[:speed]=@car.light
+  end
 end
